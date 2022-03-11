@@ -67,7 +67,7 @@ class Point:
         """
         The point is scaled by the factor.
         Args:
-            factor (int): The amount to scale.
+            factor: The integer amount to scale.
         """
         return Point(self._x * factor, self._y * factor)
     
