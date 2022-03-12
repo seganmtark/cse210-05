@@ -24,7 +24,7 @@ def main():
     cast.add_actor("foods", Food())
     cast.add_actor("snakes", Cycle())
     cast.add_actor("snakes2", Cycle2())
-     score1 = Score()
+    score1 = Score()
     score1.set_position(Point(0, 0))
     cast.add_actor("scores", score1)
     score2 = Score()
