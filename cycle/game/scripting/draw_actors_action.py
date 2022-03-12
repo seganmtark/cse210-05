@@ -1,3 +1,4 @@
+import constants
 from game.scripting.action import Action
 
 
@@ -26,18 +27,20 @@ class DrawActorsAction(Action):
             cast (Cast): The cast of Actors in the game.
             script (Script): The script of Actions in the game.
         """
-        score = cast.get_first_actor("scores")
-        food = cast.get_first_actor("foods")
-        snake = cast.get_first_actor("snakes")
-        snake2 = cast.get_first_actor("snakes2")
-        segments = snake.get_segments()
+        score1 = cast.get_first_actor("scores1")
+        score2 = cast.get_first_actor("scores2")
+        #food = cast.get_first_actor("foods")
+        snake1 = cast.get_first_actor("snake1")
+        snake2 = cast.get_first_actor("snake2")
+        segments1 = snake1.get_segments()
         segments2 = snake2.get_segments()
         messages = cast.get_actors("messages")
 
         self._video_service.clear_buffer()
-        self._video_service.draw_actor(food)
-        self._video_service.draw_actors(segments)
+        #self._video_service.draw_actor(food)
+        self._video_service.draw_actors(segments1)
         self._video_service.draw_actors(segments2)
-        self._video_service.draw_actor(score)
+        self._video_service.draw_actor(score1)
+        self._video_service.draw_actor(score2)
         self._video_service.draw_actors(messages, True)
         self._video_service.flush_buffer()

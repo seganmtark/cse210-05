@@ -1,7 +1,7 @@
 import constants
 
 from game.casting.cast import Cast
-from game.casting.food import Food
+#from game.casting.food import Food
 from game.casting.score import Score
 from game.casting.cycle import Cycle
 from game.casting.cycle2 import Cycle2
@@ -21,15 +21,15 @@ def main():
     
     # create the cast
     cast = Cast()
-    cast.add_actor("foods", Food())
-    cast.add_actor("snakes", Cycle())
-    cast.add_actor("snakes2", Cycle2())
+    #cast.add_actor("foods", Food())
+    cast.add_actor("snake1", Cycle())
+    cast.add_actor("snake2", Cycle2())
     score1 = Score()
     score1.set_position(Point(0, 0))
-    cast.add_actor("scores", score1)
+    cast.add_actor("scores1", score1)
     score2 = Score()
-    score2.set_position(Point(round(constants.MAX_X/2), 0))
-    cast.add_actor("scores", score2)
+    score2.set_position(Point(round(constants.MAX_X-100), 0))
+    cast.add_actor("scores2", score2)
    
     # start the game
     keyboard_service = KeyboardService()
